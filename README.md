@@ -52,4 +52,4 @@ Este desafio prático foi essencial para consolidar meu entendimento sobre Cloud
 
 * Política de Falhas: A opção de "roll back" é uma funcionalidade poderosa que evita ambientes inconsistentes, o que é uma das grandes vantagens do CloudFormation.
 
-A documentação do processo no GitHub não apenas cumpriu o requisito do desafio, mas também serviu como uma ótima forma de fixar o aprendizado e criar um material de referência para futuros projetos.
+A documentação do processo no GitHub não apenas me ajudou a cumprir o desafio, mas também serviu como uma ótima forma de fixar o aprendizado e criar um material de referência para futuros projetos.
