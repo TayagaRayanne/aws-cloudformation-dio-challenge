@@ -1,6 +1,6 @@
 # aws-cloudformation-dio-challenge
 ### Implementando a Primeira Stack com AWS CloudFormation
-Este repositório documenta a conclusão do desafio "Implementando sua Primeira Stack com AWS CloudFormation" do curso da DIO (Digital Innovation One), com o objetivo de demonstrar a criação e gerenciamento de infraestrutura como código na AWS.
+Este projeto documenta a conclusão do desafio "Implementando sua Primeira Stack com AWS CloudFormation", parte do curso de AWS da DIO (Digital Innovation One). O objetivo foi demonstrar a criação e gerenciamento de infraestrutura como código (IaC) na AWS, usando modelos CloudFormation para provisionar recursos de forma automatizada.
 
 ### Objetivos do Desafio
 O desafio foi projetado para me ajudar a:
@@ -23,19 +23,25 @@ Neste projeto, utilizei diferentes modelos de CloudFormation para criar recursos
 * 03-Firewall.yaml: Este modelo expande o anterior, adicionando a criação de um Grupo de Segurança (Security Group) para permitir o acesso HTTP (porta 80) à instância EC2.
 
 ### Passo a Passo da Implementação
-Para este desafio, decidi focar na criação de uma stack simples usando o arquivo 01-EC2.yaml. Abaixo estão os passos que segui e as escolhas que fiz durante o processo.
+Criei três stacks na AWS, cada uma correspondendo a um dos modelos YAML. O processo geral foi o mesmo para todas: acessei o serviço CloudFormation, selecionei "Create stack", fiz o upload do arquivo de modelo e segui as etapas de configuração.
 
-* Acesso ao CloudFormation: Naveguei até o serviço CloudFormation no console da AWS, garantindo que estava na seção de "Stacks" e não de "StackSets".
+1. Stack: MinhaPrimeiraStack
+Modelo Utilizado: 01-EC2.yaml
 
-* Criação da Stack: Cliquei em "Create stack" e, na próxima tela, escolhi a opção de carregar um arquivo de modelo. Fiz o upload do arquivo 01-EC2.yaml.
+Descrição: Esta foi minha primeira stack. O objetivo era entender o fluxo básico do CloudFormation. Deixei as opções de "IAM role" e "Stack failure" com as configurações padrão, o que demonstrou uma abordagem segura e alinhada com as boas práticas.
 
-* Configuração da Stack: Dei um nome à minha stack (MinhaPrimeiraStack) e deixei as configurações padrão para as opções de "IAM role" e "Stack failure".
+2. Stack: Minha-Stack-Apache
+Modelo Utilizado: 02-Apache.yaml
 
-IAM Role: Deixei o campo vazio, pois o CloudFormation usaria as permissões do meu usuário logado, o que é suficiente para este caso.
+Descrição: Esta stack me ensinou sobre a automatização de tarefas. O CloudFormation provisionou a instância EC2 e, logo em seguida, o script em UserData executou a instalação e o início do serviço Apache.
 
-* Stack Failure: Mantive a opção padrão "Roll back all stack resources". Isso garante que, se algo falhar, todos os recursos serão excluídos para manter um ambiente limpo e consistente.
+3. Stack: Minha-Stack-Com-Firewall
+Modelo Utilizado: 03-Firewall.yaml
 
-* Criação e Revisão: Revisei todas as informações e confirmei a criação da stack. O CloudFormation começou a provisionar a instância EC2. A stack mudou de status para CREATE_COMPLETE quando o processo foi concluído.
+Descrição: Esta stack foi a mais completa. Além de provisionar a instância e instalar o Apache, ela criou um Security Group para permitir o acesso HTTP. Isso destacou a importância de configurar regras de firewall para que o servidor web seja acessível.
+
+<img width="1440" height="701" alt="3 stacks" src="https://github.com/user-attachments/assets/cf129f59-4d3c-4608-9be3-2e5947469b26" />
+
 
 ### Insights e Conclusões
 Este desafio prático foi essencial para consolidar meu entendimento sobre CloudFormation. Aprendi que:
